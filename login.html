@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lolá - Entre com sua conta</title>
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-salmao: #EB877C;
+      --color-turquesa: #5FDBD7;
+      --color-turquesa-escuro: #18716E;
+      --color-amarelo: #F9D949;
+      --color-roxo: #C57BDB;
+      --color-roxo-escuro: #8F36A9;
+      --color-salmao-escuro: #B52919;
+      --color-text: #444444;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <main class="w-full max-w-sm">
+    <header class="flex justify-center items-center bg-turquesa w-full h-48 rounded-t-3xl">
+      <img src="img/logo-variante-salmao.svg" alt="Logo Lolá" class="h-20 object-contain">
+    </header>
+
+    <div class="bg-white p-6 rounded-b-3xl shadow-lg">
+      <div class="flex flex-col items-center gap-6">
+
+        <h1 class="font-bold text-salmao text-3xl">LOGIN</h1>
+        
+        <form class="w-full flex flex-col gap-4">
+          <div>
+            <label for="usuario" class="sr-only">Usuário</label>
+            <input 
+              type="text" 
+              id="usuario"
+              name="usuario" 
+              placeholder="Usuário" 
+              required
+              class="w-full p-3 bg-[#5E5E5E]/10 focus:bg-[#5E5E5E]/20 outline-none rounded-2xl transition-colors"
+            >
+          </div>
+
+          <div>
+            <label for="senha" class="sr-only">Senha</label>
+            <input 
+              type="password" 
+              id="senha"
+              name="senha" 
+              placeholder="Senha" 
+              required
+              class="w-full p-3 bg-[#5E5E5E]/10 focus:bg-[#5E5E5E]/20 outline-none rounded-2xl transition-colors"
+            >
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full bg-salmao hover:bg-salmao-escuro active:scale-95 transition-all rounded-2xl p-3 text-white font-semibold cursor-pointer"
+          >
+            Enviar
+          </button>
+
+          <label class="flex items-center gap-2 cursor-pointer pt-2">
+            <input type="checkbox" name="conectado" class="w-4 h-4 accent-salmao rounded cursor-pointer"> 
+            <span class="text-sm text-text select-none">Mantenha-me conectado</span>
+          </label>
+        </form>
+
+      </div>
+    </div>
+  </main>
+    
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Loja e Inventário</title>
+
+    <style type="text/tailwindcss">
+        @theme {
+        --color-salmao: #EB877C;
+        --color-turquesa: #5FDBD7;
+        --color-turquesa-escuro: #18716E;
+        --color-amarelo: #F5C15F;
+        --color-roxo: #C57BDB;
+        --color-roxo-escuro: #8F36A9;
+        --color-salmao-escuro: #B52919;
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-100 min-h-screen flex justify-center">
+    <main class="max-w-sm">
+        <div class="relative w-full">
+            <img src="img/shop-background.svg" class="object-cover w-full">
+
+            <header class="absolute top-0 w-full p-8 flex justify-between">
+                <a href="index.html"><img src="img/icons/back-white.svg"></a>
+                <a href="#">
+                    <div class="px-2 bg-salmao rounded-full flex justify-between gap-2 items-center">
+                        <img src="img/coin.svg">
+                        <p class="text-lg font-bold text-white">100</p>
+                    </div>
+                </a>
+            </header>
+
+            <div class="absolute w-full flex gap-2 justify-center items-center bottom-0 p-4">
+                <button type="submit" id="feminino"
+                    class="w-16 h-16 bg-salmao border-4 border-white rounded-xl flex items-center justify-center">
+                    <img src="img/icons/fem.svg">
+                </button>
+                <button type="submit" id="feminino"
+                    class="w-16 h-16 bg-turquesa border-4 border-white rounded-xl flex items-center justify-center">
+                    <img src="img/icons/masc.svg">
+                </button>
+            </div>
+        </div>
+
+        <!-- menu de abas -->
+        <div class="grid grid-cols-3 w-full gap-2 pt-4 px-4">
+            <button class="bg-salmao rounded-t-xl py-2 flex justify-center items-center" onclick="">
+                <img src="img/icons/shop.svg">
+            </button>
+            <button class="bg-amarelo rounded-t-xl py-2 flex justify-center items-center" onclick="">
+                <p class="text-white font-semibold">Meus Itens</p>
+            </button>
+            <button class="bg-amarelo/75 rounded-t-xl py-2 flex justify-center items-center" onclick="">
+                <p class="text-white font-semibold">Vestuário</p>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-3 w-full pt-2">
+            <button class="bg-amarelo rounded-t-xl py-2 flex justify-center items-center border-1-amarelo"
+                onclick="mudarAba('conteudo-camisetas')">
+                <img src="img/icons/shirt.svg">
+            </button>
+            <button class="bg-amarelo/75 rounded-t-xl py-2 flex justify-center items-center border-1 border-amarelo"
+                onclick="mudarAba('conteudo-calcas')">
+                <img src="img/icons/pants.svg">
+            </button>
+            <button class="bg-amarelo/75 rounded-t-xl py-2 flex justify-center items-center border-1 border-amarelo"
+                onclick="mudarAba('conteudo-sapatos')">
+                <img src="img/icons/shoe.svg">
+            </button>
+        </div>
+
+        <!-- div com camisetas -->
+
+        <div class="aba-conteudo grid grid-cols-2 p-8 gap-4" id="conteudo-camisetas">
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Camiseta regata</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/regata.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Cropped preto</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/regata.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Cropped Lolá</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/regata.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Camiseta coração</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/regata.svg">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- div com calças -->
+
+        <div class="aba-conteudo hidden grid grid-cols-2 p-8 gap-4" id="conteudo-calcas">
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Camiseta regata</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/jeans-mom.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Cropped preto</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/jeans-mom.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Cropped Lolá</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/jeans-mom.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Camiseta coração</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/jeans-mom.svg">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- div com sapatos -->
+
+        <div class="aba-conteudo hidden grid grid-cols-2 p-8 gap-4" id="conteudo-sapatos">
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Camiseta regata</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/tennis.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Cropped preto</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/tennis.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Cropped Lolá</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/tennis.svg">
+                </div>
+            </div>
+
+            <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
+                <div class="bg-salmao rounded-full flex justify-center items-center py-1">
+                    <h3 class="font-semibold text-white text-sm">Camiseta coração</h3>
+                </div>
+                <div class="flex flex-1 justify-center items-center">
+                    <img src="img/inventario/tennis.svg">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function mudarAba(id) {
+            // 1. Busca TODAS as divs que possuem a classe 'aba-conteudo' e adiciona 'hidden' nelas
+            const todasAbas = document.querySelectorAll('.aba-conteudo');
+            todasAbas.forEach(aba => {
+                aba.classList.add('hidden');
+            });
+
+            // 2. Remove o 'hidden' APENAS da div que tem o ID clicado
+            const abaSelecionada = document.getElementById(id);
+            abaSelecionada.classList.remove('hidden');
+            abaSeleciona.classList.
+        }
+    </script>
+</body>
+
+</html>
