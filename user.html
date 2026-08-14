@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lolá - Entre com sua conta</title>
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+      --color-salmao: #EB877C;
+      --color-turquesa: #5FDBD7;
+      --color-turquesa-escuro: #18716E;
+      --color-amarelo: #F5C15F;
+      --color-roxo: #C57BDB;
+      --color-roxo-escuro: #8F36A9;
+      --color-salmao-escuro: #B52919;
+      --color-text: #444444;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex">
+
+    <main class="w-full max-w-md">
+        <div class="relative">
+            <div class="bg-salmao w-full h-32 rounded-b-3xl p-8">
+                <a href="index.html"><img src="img/icons/back-white.svg" alt="Voltar"></a>
+            </div>
+            <div class="flex flex-col gap-6 top-0 bg-white -mt-8 mx-4 rounded-3xl p-8">
+                <h1 class="font-bold text-salmao text-2xl">Perfil</h1>
+                <div class="flex justify-center items-center">
+                    <img src="img/profile.png" alt="Foto de perfil" class="rounded-full w-24 border-4 border-salmao">
+                </div>
+                <div class="grid grid-cols-[2fr_1fr] gap-2">
+                    <div class="col-span-2">
+                        <p class="font-semibold text-lg text-salmao">Nome</p>
+                        <p class="text-md text-text">Ana Clara Kaori</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg text-salmao">Data de Nascimento</p>
+                        <p class="text-md text-text">07/08/2021</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg text-salmao">Idade</p>
+                        <p class="text-md text-text">4 anos</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-semibold text-lg text-salmao">Fonema Atual</p>
+                        <p class="text-md text-text">Fonema /r/</p>
+                    </div>
+                </div>
+                <div class="bg-salmao rounded-3xl p-4 border-b-8 border-b-salmao-escuro">
+                    <h2 class="text-white font-bold text-lg">Evolução</h2>
+                    <div class="grid grid-cols-[3fr_1fr] p-2 gap-2">
+                        <div class="flex flex-col gap-2">
+                            <p class="text-white text-md">Sons Líquidos</p>
+                            <div class="w-full rounded-full bg-[#FAE3B7] overflow-hidden h-5">
+                                <div class="bg-amarelo w-16 h-full rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end items-end">
+                            <p class="text-white text-md font-semibold">25%</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <p class="text-white text-md">Sons Explosivos</p>
+                            <div class="w-full rounded-full bg-[#FAE3B7] overflow-hidden h-5">
+                                <div class="bg-amarelo w-5 h-full rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end items-end">
+                            <p class="text-white text-md font-semibold">3%</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <p class="text-white text-md">Sons Nasais</p>
+                            <div class="w-full rounded-full bg-[#FAE3B7] overflow-hidden h-5">
+                                <div class="bg-amarelo w-10 h-full rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end items-end">
+                            <p class="text-white text-md font-semibold">10%</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <p class="text-white text-md">Sons Fricativos</p>
+                            <div class="w-full rounded-full bg-[#FAE3B7] overflow-hidden h-5">
+                                <div class="bg-amarelo w-24 h-full rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end items-end">
+                            <p class="text-white text-md font-semibold">50%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

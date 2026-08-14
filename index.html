@@ -1,138 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lolá - Entre com sua conta</title>
 
-    <style type="text/tailwindcss">
-        @theme {
-        --color-salmao: #EB877C;
-        --color-turquesa: #5FDBD7;
-        --color-turquesa-escuro: #18716E;
-        --color-amarelo: #F9D949;
-        --color-roxo: #C57BDB;
-        --color-roxo-escuro: #8F36A9;
-        --color-salmao-escuro: #B52919;
-        }
-    </style>
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <style type="text/tailwindcss">
+    @theme {
+      --color-salmao: #EB877C;
+      --color-turquesa: #5FDBD7;
+      --color-turquesa-escuro: #18716E;
+      --color-amarelo: #F9D949;
+      --color-roxo: #C57BDB;
+      --color-roxo-escuro: #8F36A9;
+      --color-salmao-escuro: #B52919;
+      --color-text: #444444;
+    }
+  </style>
 </head>
+<body class="bg-gray-100 min-h-screen">
+  <!--splash screen-->
+  <div class="fixed w-full h-full bg-turquesa flex flex-col justify-center items-center">
+    <div class="opacity-0 transition-opacity duration-3000 ease-in-out" id="logo-nuvem">
+      <img src="img/logo-nuvem.svg">
+    </div>
+    <div class="absolute flex justify-center items-center opacity-0 transition-opacity -mt-0 duration-8000 ease-in-out" id="logo-letreiro">
+      <img src="img/logo-letreiro.svg">
+    </div>
+    <div>
 
-<body class="bg-gray-200 min-h-screen flex justify-center items-center">
-    <!-- main com 'relative' para o nav prender nele, e 'pb-20' para o menu não cobrir o último card -->
-    <main class="bg-amarelo/75 w-full max-w-md relative min-h-screen pb-20 overflow-hidden shadow-xl">
-        <!-- Cabeçalho -->
-        <header class="p-8">
-            <div class="flex justify-between items-center">
-                <div class="flex justify-center items-center gap-5">
-                    <a href="#">
-                        <div
-                            class="bg-turquesa w-14 h-14 rounded-full flex justify-center items-center border-5 border-white">
-                            <p class="text-2xl font-bold text-white">1</p>
-                        </div>
-                    </a>
+    </div>
+  </div>
+  <main class="w-full max-w-sm">
 
-                    <a href="#">
-                        <div class="px-2 bg-salmao rounded-full flex justify-between gap-2 items-center">
-                            <img src="img/coin.svg">
-                            <p class="text-lg font-bold text-white">100</p>
-                        </div>
-                    </a>
-                </div>
-
-                <a href="#">
-                    <div class="flex w-10 h-10 bg-salmao justify-center items-center rounded-full">
-                        <img src="img/icons/notif.svg" alt="">
-                    </div>
-                </a>
-
-            </div>
-        </header>
-
-        <div class="px-8">
-            <div class="bg-white w-30 h-50">
-            </div>
-        </div>
-
-        <div class="p-8 flex flex-col gap-4">
-            <div
-                class="w-full h-30 bg-turquesa rounded-2xl border-b-turquesa-escuro border-b-8 p-4 flex flex-col gap-2">
-                <p class="font-semibold text-lg text-white">Treinamento de Fonema</p>
-                <a href="#">
-                    <div class="flex bg-white gap-2 px-6 w-fit rounded-xl">
-                        <img src="img/icons/arrow-blue.svg">
-                        <p class="text-md text-turquesa font-semibold">Iniciar</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="w-full h-30 bg-roxo rounded-2xl border-b-roxo-escuro border-b-8 p-4 flex flex-col gap-2">
-                <p class="font-semibold text-lg text-white">Missão do dia</p>
-                <a href="#">
-                    <div class="flex bg-white gap-2 px-6 w-fit rounded-xl">
-                        <img src="img/icons/arrow-purple.svg">
-                        <p class="text-md text-roxo font-semibold">Iniciar</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="w-full bg-salmao rounded-2xl border-b-salmao-escuro border-b-8 p-4 flex flex-col gap-4">
-                <div class="flex justify-between">
-                    <p class="font-semibold text-lg text-white">Sua semana</p>
-                    <span class="flex justify-between items-center bg-white rounded-full px-2 gap-2">
-                        <img src="img/icons/fire.svg" class="w-5">
-                        <p class="text-[12px]">2 dias na sequência</p>
-                    </span>
-                </div>
-                <div class="grid grid-cols-7 px-2">
-                    <div class="flex flex-col justify-center items-center gap-2">
-                        <p class="text-white text-sm">SEG</p>
-                        <span class="w-8 h-8 bg-amarelo border-2 border-white rounded-full"></span>
-                    </div>
-                    <div class="flex flex-col justify-center items-center gap-2">
-                        <p class="text-white text-sm">TER</p>
-                        <span class="w-8 h-8 bg-amarelo border-2 border-white rounded-full"></span>
-                    </div>
-                    <div class="flex flex-col justify-center items-center gap-2">
-                        <p class="text-white text-sm">QUA</p>
-                        <span class="w-8 h-8 bg-white rounded-full"></span>
-                    </div>
-                    <div class="flex flex-col justify-center items-center gap-2">
-                        <p class="text-white text-sm">QUI</p>
-                        <span class="w-8 h-8 bg-white rounded-full"></span>
-                    </div>
-                    <div class="flex flex-col justify-center items-center gap-2">
-                        <p class="text-white text-sm">SEX</p>
-                        <span class="w-8 h-8 bg-white rounded-full"></span>
-                    </div>
-                    <div class="flex flex-col justify-center items-center gap-2">
-                        <p class="text-white text-sm">SÁB</p>
-                        <span class="w-8 h-8 bg-white rounded-full"></span>
-                    </div>
-                    <div class="flex flex-col justify-center items-center gap-2">
-                        <p class="text-white text-sm">DOM</p>
-                        <span class="w-8 h-8 bg-white rounded-full"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <nav
-            class="fixed bottom-0 left-0 right-0 bg-amarelo h-16 flex justify-around items-center px-6 border-t border-yellow-300 shadow-lg w-full max-w-md left-1/2 -translate-x-1/2">
-            <a href="shop.html" class="p-2 hover:scale-110 transition-transform">
-                <img src="img/icons/home.svg" alt="Início" class="w-7 h-7">
-            </a>
-            <a href="#" class="p-2 hover:scale-110 transition-transform">
-                <img src="img/icons/user.svg" alt="Perfil" class="w-7 h-7">
-            </a>
-            <a href="#" class="p-2 hover:scale-110 transition-transform">
-                <img src="img/icons/settings.svg" alt="Configurações" class="w-7 h-7">
-            </a>
-        </nav>
-    </main>
+  </main>
+    
 </body>
 
+<script>
+  //executa assim que a página é carregada
+  window.addEventListener('load', () => {
+    const nuvem = document.getElementById('logo-nuvem');
+    const letreiro = document.getElementById('logo-letreiro');
+
+    nuvem.classList.remove('opacity-0');
+    nuvem.classList.add('opacity-100');
+    letreiro.classList.remove('-mt-500');
+    letreiro.classList.remove('opacity-0');
+    letreiro.classList.add('opacity-100');
+  });
+
+</script>
 </html>
