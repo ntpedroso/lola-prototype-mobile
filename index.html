@@ -19,15 +19,40 @@
       --color-salmao-escuro: #B52919;
       --color-text: #444444;
     }
+
+      @keyframes encaixeElastico {
+        0% {
+          opacity: 0;
+          transform: translateY(-600px) scaleY(1) scaleX(0.8); /* Inicia no alto e esticado */
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(25px) scaleY(1) scaleX(1.2);   /* Passa do centro e achata ao "bater" */
+        }
+        75% {
+          transform: translateY(-25px) scaleY(1.1) scaleX(0.9);   /* Dá um pequeno salto de volta */
+        }
+        90% {
+          transform: translateY(3px) scaleY(0.98) scaleX(1.02);  /* Ajuste fino final */
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);                     /* Encaixa perfeitamente no centro */
+        }
+      }
+
+      .logo-elastico {
+        animation: encaixeElastico 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
+      }
   </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
   <!--splash screen-->
-  <div class="fixed w-full h-full bg-turquesa flex flex-col justify-center items-center">
+  <div class="fixed w-full h-full bg-turquesa flex flex-col justify-center items-center transition-opacity duration-700" id="splash-screen">
     <div class="opacity-0 transition-opacity duration-3000 ease-in-out" id="logo-nuvem">
       <img src="img/logo-nuvem.svg">
     </div>
-    <div class="absolute flex justify-center items-center opacity-0 transition-opacity -mt-0 duration-8000 ease-in-out" id="logo-letreiro">
+    <div class="absolute flex justify-center items-center logo-elastico" id="logo-letreiro">
       <img src="img/logo-letreiro.svg">
     </div>
     <div>
@@ -53,5 +78,20 @@
     letreiro.classList.add('opacity-100');
   });
 
+  window.addEventListener('DOMContentLoaded', () => {
+    const tempo_splash = 2500;
+
+    setTimeout(() => {
+      const splash_screen = document.getElementById('splash-screen');
+
+      splash_screen.classList.remove('opacity-100');
+      splash_screen.classList.add('opacity-0');
+
+      setTimeout(() => {
+        splash_screen.classList.add('hidden');
+      }, 700);
+    }, tempo_splash);
+  });
+  
 </script>
 </html>
