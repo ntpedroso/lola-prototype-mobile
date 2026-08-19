@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,9 +47,12 @@
       }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
+
+<body class="bg-gray-100 min-h-screen flex justify-center items-center">
   <!--splash screen-->
-  <div class="fixed w-full h-full bg-turquesa flex flex-col justify-center items-center transition-opacity duration-700" id="splash-screen">
+  <div
+    class="fixed z-50 w-full h-full max-w-md bg-turquesa flex flex-col justify-center items-center transition-opacity duration-700"
+    id="splash-screen">
     <div class="opacity-0 transition-opacity duration-3000 ease-in-out" id="logo-nuvem">
       <img src="img/logo-nuvem.svg">
     </div>
@@ -59,10 +63,14 @@
 
     </div>
   </div>
-  <main class="w-full max-w-sm">
 
+  <main class="w-full max-w-md">
+    <div class="relative">
+      <img src="img/background-index.svg" class="object-fill">
+        <a href="login.html" class="absolute inset-0 top-150 m-auto h-fit w-fit z-10 bg-salmao text-white font-semibold py-3 px-8 rounded-full">FAZER LOGIN</a>
+    </div>
   </main>
-    
+
 </body>
 
 <script>
@@ -92,6 +100,7 @@
       }, 700);
     }, tempo_splash);
   });
-  
+
 </script>
+
 </html>

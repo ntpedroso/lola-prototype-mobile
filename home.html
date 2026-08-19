@@ -35,7 +35,8 @@
 </head>
 
 <body class="bg-gray-200 min-h-screen flex justify-center items-center">
-    <!-- main com 'relative' para o nav prender nele, e 'pb-20' para o menu não cobrir o último card -->
+    <!-- main com 'relat
+     ive' para o nav prender nele, e 'pb-20' para o menu não cobrir o último card -->
     <main class="bg-amarelo/75 w-full max-w-md relative min-h-screen pb-20 overflow-hidden shadow-xl">
         <!-- Cabeçalho -->
         <header class="p-8">
@@ -66,30 +67,47 @@
         </header>
 
         <div class="px-8">
-            <div class="bg-no-repeat animate-acenar w-[175px] h-[237px] bg-[url('img/sprite-aceno.png')]">
+            <div class="hidden bg-no-repeat animate-acenar w-[175px] h-[237px] bg-[url('img/sprite-aceno.png')]">
             </div>
         </div>
 
         <div class="p-8 flex flex-col gap-4">
             <div
-                class="w-full h-30 bg-turquesa rounded-2xl border-b-turquesa-escuro border-b-8 p-4 flex flex-col gap-2">
-                <p class="font-semibold text-lg text-white">Treinamento de Fonema</p>
-                <a href="#">
-                    <div class="flex bg-white gap-2 px-6 w-fit rounded-xl">
-                        <img src="img/icons/arrow-blue.svg">
-                        <p class="text-md text-turquesa font-semibold">Iniciar</p>
-                    </div>
-                </a>
+                class="w-full h-30 bg-turquesa rounded-2xl border-b-turquesa-escuro border-b-8 px-4 pt-4 flex justify-between overflow-hidden">
+
+                <div class="flex flex-col gap-2 pb-4">
+                    <p class="font-semibold text-lg text-white">Treinamento de Fonema</p>
+                    <a href="#">
+                        <div class="flex bg-white gap-2 px-6 w-fit rounded-xl py-1">
+                            <img src="img/icons/arrow-blue.svg" alt="Seta">
+                            <p class="text-md text-turquesa font-semibold">Iniciar</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex items-end">
+                    <img src="img/avatar-piscando.svg" class="w-24 block" alt="Avatar">
+                </div>
+
             </div>
 
-            <div class="w-full h-30 bg-roxo rounded-2xl border-b-roxo-escuro border-b-8 p-4 flex flex-col gap-2">
-                <p class="font-semibold text-lg text-white">Missão do dia</p>
-                <a href="#">
-                    <div class="flex bg-white gap-2 px-6 w-fit rounded-xl">
-                        <img src="img/icons/arrow-purple.svg">
-                        <p class="text-md text-roxo font-semibold">Iniciar</p>
-                    </div>
-                </a>
+            <div
+                class="w-full h-30 bg-roxo rounded-2xl border-b-roxo-escuro border-b-8 px-4 pt-4 flex justify-between overflow-hidden">
+
+                <div class="flex flex-col gap-2 pb-4">
+                    <p class="font-semibold text-lg text-white">Missão do dia</p>
+                    <a href="#">
+                        <div class="flex bg-white gap-2 px-6 w-fit rounded-xl py-1">
+                            <img src="img/icons/arrow-purple.svg" alt="Seta">
+                            <p class="text-md text-roxo font-semibold">Iniciar</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex items-end">
+                    <img src="img/avatar-piscando.svg" class="w-24 block" alt="Avatar">
+                </div>
+
             </div>
 
             <div class="w-full bg-salmao rounded-2xl border-b-salmao-escuro border-b-8 p-4 flex flex-col gap-4">
