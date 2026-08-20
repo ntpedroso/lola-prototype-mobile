@@ -21,8 +21,8 @@
 
 </head>
 
-<body class="bg-gray-100 min-h-screen flex justify-center">
-    <main class="max-w-sm">
+<body class="bg-gray-100 min-h-dvh flex justify-center">
+    <main class="max-w-md w-full">
         <div class="relative w-full">
             <img src="img/shop-background.svg" class="object-cover w-full">
 
@@ -37,11 +37,11 @@
             </header>
 
             <div class="absolute w-full flex gap-2 justify-center items-center bottom-0 p-4">
-                <button type="submit" id="feminino"
+                <button type="button" id="feminino"
                     class="w-16 h-16 bg-salmao border-4 border-white rounded-xl flex items-center justify-center">
                     <img src="img/icons/fem.svg">
                 </button>
-                <button type="submit" id="feminino"
+                <button type="button" id="masculino"
                     class="w-16 h-16 bg-turquesa border-4 border-white rounded-xl flex items-center justify-center">
                     <img src="img/icons/masc.svg">
                 </button>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="grid grid-cols-3 w-full pt-2">
-            <button class="bg-amarelo rounded-t-xl py-2 flex justify-center items-center border-1-amarelo"
+            <button class="bg-amarelo rounded-t-xl py-2 flex justify-center items-center border-1 border-amarelo"
                 onclick="mudarAba('conteudo-camisetas')">
                 <img src="img/icons/shirt.svg">
             </button>
@@ -78,7 +78,7 @@
 
         <!-- div com camisetas -->
 
-        <div class="aba-conteudo grid grid-cols-2 p-8 gap-4" id="conteudo-camisetas">
+        <div class="aba-conteudo grid grid-cols-2 px-6 py-8 gap-4" id="conteudo-camisetas">
 
             <div class="overflow-hidden bg-amarelo/25 rounded-xl h-40 flex flex-col">
                 <div class="bg-salmao rounded-full flex justify-center items-center py-1">

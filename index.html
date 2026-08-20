@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lolá - Entre com sua conta</title>
 
-  <!-- Tailwind CSS v4 CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <style type="text/tailwindcss">
@@ -21,91 +20,101 @@
       --color-text: #444444;
     }
 
-      @keyframes encaixeElastico {
-        0% {
-          opacity: 0;
-          transform: translateY(-600px) scaleY(1) scaleX(0.8); /* Inicia no alto e esticado */
-        }
-        60% {
-          opacity: 1;
-          transform: translateY(25px) scaleY(1) scaleX(1.2);   /* Passa do centro e achata ao "bater" */
-        }
-        75% {
-          transform: translateY(-25px) scaleY(1.1) scaleX(0.9);   /* Dá um pequeno salto de volta */
-        }
-        90% {
-          transform: translateY(3px) scaleY(0.98) scaleX(1.02);  /* Ajuste fino final */
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);                     /* Encaixa perfeitamente no centro */
-        }
+    @keyframes encaixeElastico {
+      0% {
+        opacity: 0;
+        transform: translateY(-600px) scaleY(1) scaleX(0.8);
       }
 
-      .logo-elastico {
-        animation: encaixeElastico 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
+      60% {
+        opacity: 1;
+        transform: translateY(25px) scaleY(1) scaleX(1.2);
       }
+
+      75% {
+        transform: translateY(-25px) scaleY(1.1) scaleX(0.9);
+      }
+
+      90% {
+        transform: translateY(3px) scaleY(0.98) scaleX(1.02);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .logo-elastico {
+      animation: encaixeElastico 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
   </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen flex justify-center items-center">
-  <!--splash screen-->
-  <div
-    class="fixed z-50 w-full h-full max-w-md bg-turquesa flex flex-col justify-center items-center transition-opacity duration-700"
-    id="splash-screen">
-    <div class="opacity-0 transition-opacity duration-3000 ease-in-out" id="logo-nuvem">
-      <img src="img/logo-nuvem.svg">
-    </div>
-    <div class="absolute flex justify-center items-center logo-elastico" id="logo-letreiro">
-      <img src="img/logo-letreiro.svg">
-    </div>
-    <div>
+<body class="bg-gray-100 min-h-dvh flex justify-center">
+
+  <main class="relative w-full max-w-md h-dvh overflow-hidden">
+
+    <img
+      src="img/background-index.svg"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt=""
+    >
+
+    <a
+      href="login.html"
+      class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 bg-salmao text-white font-semibold py-3 px-8 rounded-full shadow whitespace-nowrap"
+    >
+      FAZER LOGIN
+    </a>
+
+    <div
+      id="splash-screen"
+      class="absolute inset-0 z-50 w-full h-full bg-turquesa flex flex-col justify-center items-center transition-opacity duration-700"
+    >
+
+      <div
+        id="logo-nuvem"
+        class="opacity-0 transition-opacity duration-3000 ease-in-out"
+      >
+        <img src="img/logo-nuvem.svg" alt="Logo Lolá">
+      </div>
+
+      <div
+        id="logo-letreiro"
+        class="absolute flex justify-center items-center logo-elastico"
+      >
+        <img src="img/logo-letreiro.svg" alt="Lolá">
+      </div>
 
     </div>
-  </div>
 
-  <main class="w-full max-w-md">
-    <div class="relative w-full">
-
-      <img src="img/background-index.svg" class="w-full object-fill">
-
-      <a href="login.html" class="absolute top-200 left-1/2 -translate-x-1/2 z-10 bg-salmao text-white font-semibold py-3 px-8 rounded-full shadow">
-        FAZER LOGIN
-      </a>
-
-    </div>
   </main>
 
-</body>
+  <script>
+    window.addEventListener('load', () => {
+      const nuvem = document.getElementById('logo-nuvem');
 
-<script>
-  //executa assim que a página é carregada
-  window.addEventListener('load', () => {
-    const nuvem = document.getElementById('logo-nuvem');
-    const letreiro = document.getElementById('logo-letreiro');
+      nuvem.classList.remove('opacity-0');
+      nuvem.classList.add('opacity-100');
+    });
 
-    nuvem.classList.remove('opacity-0');
-    nuvem.classList.add('opacity-100');
-    letreiro.classList.remove('-mt-500');
-    letreiro.classList.remove('opacity-0');
-    letreiro.classList.add('opacity-100');
-  });
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const tempo_splash = 2500;
-
-    setTimeout(() => {
-      const splash_screen = document.getElementById('splash-screen');
-
-      splash_screen.classList.remove('opacity-100');
-      splash_screen.classList.add('opacity-0');
+    window.addEventListener('DOMContentLoaded', () => {
+      const tempoSplash = 2500;
 
       setTimeout(() => {
-        splash_screen.classList.add('hidden');
-      }, 700);
-    }, tempo_splash);
-  });
+        const splashScreen = document.getElementById('splash-screen');
 
-</script>
+        splashScreen.classList.add('opacity-0');
+
+        setTimeout(() => {
+          splashScreen.classList.add('hidden');
+        }, 700);
+
+      }, tempoSplash);
+    });
+  </script>
+
+</body>
 
 </html>
