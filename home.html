@@ -35,9 +35,9 @@
 </head>
 
 <body class="bg-gray-200 min-h-screen flex justify-center items-center">
-    <!-- main com 'relat
-     ive' para o nav prender nele, e 'pb-20' para o menu não cobrir o último card -->
-    <main class="bg-amarelo/75 w-full max-w-md relative min-h-screen pb-20 overflow-hidden shadow-xl">
+    <!-- main com 'relative' para o nav prender nele, e 'pb-20' para o menu não cobrir o último card -->
+    <main
+        class="bg-[url('img/background-home.svg')] w-full max-w-md relative min-h-screen pb-20 overflow-hidden shadow-xl">
         <!-- Cabeçalho -->
         <header class="p-8">
             <div class="flex justify-between items-center">
@@ -67,7 +67,12 @@
         </header>
 
         <div class="px-8">
-            <div class="hidden bg-no-repeat animate-acenar w-[175px] h-[237px] bg-[url('img/sprite-aceno.png')]">
+            <!--
+                <div class="hidden bg-no-repeat animate-acenar w-[175px] h-[237px] bg-[url('img/sprite-aceno.png')]">
+                </div>
+            -->
+            <div>
+                <img src="img/lola.svg" class="w-32">
             </div>
         </div>
 
@@ -77,7 +82,7 @@
 
                 <div class="flex flex-col gap-2 pb-4">
                     <p class="font-semibold text-lg text-white">Treinamento de Fonema</p>
-                    <a href="#">
+                    <a href="levels.html">
                         <div class="flex bg-white gap-2 px-6 w-fit rounded-xl py-1">
                             <img src="img/icons/arrow-blue.svg" alt="Seta">
                             <p class="text-md text-turquesa font-semibold">Iniciar</p>
