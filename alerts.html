@@ -138,7 +138,8 @@
                         <input type="password" placeholder="Senha"
                             class="bg-gray-200 rounded-xl py-2 px-4 text-text text-md outline-none">
 
-                        <button type="button" class="bg-salmao text-white font-semibold rounded-xl py-2">
+                        <button type="button" class="bg-salmao text-white font-semibold rounded-xl py-2"
+                            id="btnMensagens">
                             Entrar
                         </button>
 
@@ -150,13 +151,37 @@
 
         </div>
 
-        <div class="" id="mensagens">
-            <div class="flex flex-col">
-                <div>
-                    <div class="bg-gray-200 p-3 rounded-t-2xl rounded-r-2xl">
-                        <p>Olá, tudo bem?</p>
-                    </div>
-                    <img src="img/lola.svg" class="rounded-full w-6">
+        <div class="hidden flex flex-col" id="chat">
+            <div class="flex p-8 gap-5">
+                <img src="img/lola.svg" class="rounded-full w-6">
+                <div class="bg-gray-200 p-3 rounded-t-2xl rounded-r-2xl">
+                    <p>Olá, tudo bem?</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col px-8">
+                <div class="bg-[#FCECCF] p-3 rounded-t-2xl rounded-l-2xl ml-10">
+                    <p>Olá, doutora! tudo bem e você?</p>
+                </div>
+            </div>
+
+            <div class="flex p-8 gap-5">
+                <img src="img/lola.svg" class="rounded-full w-6">
+                <div class="bg-gray-200 p-3 rounded-t-2xl rounded-r-2xl">
+                    <p>Tudo bem! Sobre os exercícios da Ana, recomendo repetir a fase 3.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col px-8">
+                <div class="bg-[#FCECCF] p-3 rounded-t-2xl rounded-l-2xl ml-10">
+                    <p>Certo! Muito obrigada.</p>
+                </div>
+            </div>
+
+            <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md p-2 flex justify-center items-center">
+                <input type="text" placeholder="Digite sua mensagem aqui" class="w-full bg-gray-100 p-4 rounded-xl">
+                <div class="bg-salmao absolute right-5 p-2 rounded-xl">
+                    <img src="img/icons/send.svg">
                 </div>
             </div>
         </div>
@@ -170,6 +195,9 @@
 
         const conteudoNotificacao = document.getElementById('conteudo-notificacao');
         const conteudoMensagens = document.getElementById('conteudo-mensagens');
+
+        const btnMensagens = document.getElementById('btnMensagens');
+        const chat = document.getElementById('chat');
 
         const fecharPopup = document.getElementById('fechar-popup');
 
@@ -187,6 +215,7 @@
 
             conteudoNotificacao.classList.remove('hidden');
             conteudoMensagens.classList.add('hidden');
+            chat.classList.add('hidden');
         });
 
 
@@ -205,6 +234,7 @@
             conteudoNotificacao.classList.add('hidden');
 
             conteudoMensagens.classList.remove('hidden');
+            chat.classList.add('hidden');
         });
 
 
@@ -225,6 +255,11 @@
             abaMensagens.classList.add('text-salmao');
         });
 
+        btnMensagens.addEventListener('click', () => {
+            conteudoNotificacao.classList.add('hidden');
+            conteudoMensagens.classList.add('hidden');
+            chat.classList.remove('hidden');
+        })
     </script>
 
 </body>

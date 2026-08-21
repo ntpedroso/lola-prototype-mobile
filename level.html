@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lolá - Entre com sua conta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+      --color-salmao: #EB877C;
+      --color-turquesa: #5FDBD7;
+      --color-turquesa-escuro: #18716E;
+      --color-amarelo: #F9D949;
+      --color-roxo: #C57BDB;
+      --color-roxo-escuro: #8F36A9;
+      --color-salmao-escuro: #B52919;
+      --color-text: #444444;
+      --font-roboto: "Roboto", sans-serif;
+        }
+
+    @keyframes subirTitulo {
+        0% {
+            transform: translateY(100vh);
+            opacity: 0;
+        }
+
+        75% {
+            transform: translateY(-12px);
+            opacity: 1;
+        }
+
+        90% {
+            transform: translateY(5px);
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .animar-titulo {
+        animation: subirTitulo 1.5s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 h-dvh flex items-center justify-center">
+
+    <main class="w-full max-w-sm h-dvh bg-[url('img/level-home-1.svg')] bg-cover bg-center bg-no-repeat relative">
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 animar-titulo">
+
+            <div
+                class="bg-white/90 border-4 border-salmao rounded-2xl px-10 py-3 shadow-lg text-center whitespace-nowrap text-roboto ">
+                <p class="text-salmao text-sm font-bold uppercase tracking-widest">
+                    Nível 01
+                </p>
+
+                <h1 class="text-text font-bold text-2xl">
+                    A Fazenda
+                </h1>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
