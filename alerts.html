@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lolá - Notificações</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --color-salmao: #EB877C;
+            --color-turquesa: #5FDBD7;
+            --color-turquesa-escuro: #18716E;
+            --color-amarelo: #F9D949;
+            --color-roxo: #C57BDB;
+            --color-roxo-escuro: #8F36A9;
+            --color-salmao-escuro: #B52919;
+            --color-text: #444444;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-dvh flex justify-center">
+
+    <main class="w-full max-w-md min-h-dvh bg-white">
+
+        <div class="relative">
+
+            <div class="bg-salmao w-full h-32 rounded-b-3xl p-8">
+
+                <a href="home.html">
+                    <img src="img/icons/back-white.svg" alt="Voltar">
+                </a>
+
+                <div class="absolute bottom-0 left-0 w-full px-8">
+
+                    <div class="flex items-center justify-center">
+
+                        <button type="button" id="notificacao"
+                            class="bg-[#F7D187] rounded-l-3xl w-full px-4 py-2 text-white font-semibold text-lg">
+                            Notificações
+                        </button>
+
+                        <button type="button" id="mensagens"
+                            class="bg-[#FCECCF] rounded-r-3xl w-full px-4 py-2 text-salmao font-semibold text-lg">
+                            Mensagens
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="conteudo-notificacao" class="flex flex-col p-8 gap-4">
+
+            <div class="flex justify-end">
+
+                <button type="button" class="text-salmao text-md">
+                    Limpar
+                </button>
+
+            </div>
+
+            <a href="#">
+
+                <div class="flex gap-4 bg-gray-200 rounded-lg p-4 items-center min-h-20">
+
+                    <img src="img/icons/star.svg" class="w-12 h-12 shrink-0" alt="">
+
+                    <p class="flex-1">
+                        Sua fonoaudióloga enviou uma nova missão para você! Vamos conferir?
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a href="#">
+
+                <div class="flex gap-4 bg-gray-200 rounded-lg p-4 items-center min-h-20">
+
+                    <img src="img/icons/star.svg" class="w-12 h-12 shrink-0" alt="">
+
+                    <p class="flex-1">
+                        Parabéns! Você ganhou 10 estrelas.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a href="#">
+
+                <div class="flex gap-4 bg-gray-200 rounded-lg p-4 items-center min-h-20">
+
+                    <img src="img/icons/star.svg" class="w-12 h-12 shrink-0" alt="">
+
+                    <p class="flex-1">
+                        Um novo tema acabou de ser desbloqueado! Venha conhecer os novos sons.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <div id="conteudo-mensagens"
+            class="hidden fixed inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-md z-50 px-8 bg-black/20">
+
+            <div class="w-full h-full flex justify-center items-center">
+
+                <div id="popup" class="flex flex-col gap-4 w-full bg-white shadow-lg rounded-2xl p-8">
+
+                    <div class="flex justify-end">
+
+                        <button type="button" id="fechar-popup">
+
+                            <img src="img/icons/close.svg" alt="Fechar">
+
+                        </button>
+
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+
+                        <p>
+                            Digite a senha do responsável para acessar a conversa
+                        </p>
+
+                        <input type="password" placeholder="Senha"
+                            class="bg-gray-200 rounded-xl py-2 px-4 text-text text-md outline-none">
+
+                        <button type="button" class="bg-salmao text-white font-semibold rounded-xl py-2">
+                            Entrar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="" id="mensagens">
+            <div class="flex flex-col">
+                <div>
+                    <div class="bg-gray-200 p-3 rounded-t-2xl rounded-r-2xl">
+                        <p>Olá, tudo bem?</p>
+                    </div>
+                    <img src="img/lola.svg" class="rounded-full w-6">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script>
+        const abaNotificacao = document.getElementById('notificacao');
+        const abaMensagens = document.getElementById('mensagens');
+
+        const conteudoNotificacao = document.getElementById('conteudo-notificacao');
+        const conteudoMensagens = document.getElementById('conteudo-mensagens');
+
+        const fecharPopup = document.getElementById('fechar-popup');
+
+        abaNotificacao.addEventListener('click', () => {
+
+            abaNotificacao.classList.add('bg-[#F7D187]');
+            abaNotificacao.classList.remove('bg-[#FCECCF]');
+            abaNotificacao.classList.add('text-white');
+            abaNotificacao.classList.remove('text-salmao');
+
+            abaMensagens.classList.remove('bg-[#F7D187]');
+            abaMensagens.classList.add('bg-[#FCECCF]');
+            abaMensagens.classList.remove('text-white');
+            abaMensagens.classList.add('text-salmao');
+
+            conteudoNotificacao.classList.remove('hidden');
+            conteudoMensagens.classList.add('hidden');
+        });
+
+
+        abaMensagens.addEventListener('click', () => {
+
+            abaNotificacao.classList.remove('bg-[#F7D187]');
+            abaNotificacao.classList.add('bg-[#FCECCF]');
+            abaNotificacao.classList.remove('text-white');
+            abaNotificacao.classList.add('text-salmao');
+
+            abaMensagens.classList.add('bg-[#F7D187]');
+            abaMensagens.classList.remove('bg-[#FCECCF]');
+            abaMensagens.classList.add('text-white');
+            abaMensagens.classList.remove('text-salmao');
+
+            conteudoNotificacao.classList.add('hidden');
+
+            conteudoMensagens.classList.remove('hidden');
+        });
+
+
+        fecharPopup.addEventListener('click', () => {
+
+            conteudoMensagens.classList.add('hidden');
+
+            conteudoNotificacao.classList.remove('hidden');
+
+            abaNotificacao.classList.add('bg-[#F7D187]');
+            abaNotificacao.classList.remove('bg-[#FCECCF]');
+            abaNotificacao.classList.add('text-white');
+            abaNotificacao.classList.remove('text-salmao');
+
+            abaMensagens.classList.remove('bg-[#F7D187]');
+            abaMensagens.classList.add('bg-[#FCECCF]');
+            abaMensagens.classList.remove('text-white');
+            abaMensagens.classList.add('text-salmao');
+        });
+
+    </script>
+
+</body>
+
+</html>
